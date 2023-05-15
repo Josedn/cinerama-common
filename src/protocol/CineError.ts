@@ -1,7 +1,7 @@
 import { constants as HttpConstants } from "http2";
 
 let errorCodeCount = 4003;
-export class CineError {
+export default class CineError {
   public static readonly NOT_AUTHORIZED = new CineError(
     "Not authorized",
     HttpConstants.HTTP_STATUS_UNAUTHORIZED,
@@ -30,6 +30,11 @@ export class CineError {
   public static readonly INVALID_FILE_INDEX = new CineError(
     "Invalid file index",
     HttpConstants.HTTP_STATUS_NOT_FOUND,
+    errorCodeCount++,
+  );
+  public static readonly INVALID_CREDENTIALS = new CineError(
+    "Invalid credentials",
+    HttpConstants.HTTP_STATUS_UNAUTHORIZED,
     errorCodeCount++,
   );
   constructor(public errorMessage: string, public httpStatusCode: number, public errorCode: number) {}
