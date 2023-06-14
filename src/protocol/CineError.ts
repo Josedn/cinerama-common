@@ -4,7 +4,7 @@ let errorCodeCount = 4003;
 export default class CineError {
   public static readonly NOT_AUTHORIZED = new CineError(
     "Not authorized",
-    HttpConstants.HTTP_STATUS_UNAUTHORIZED,
+    HttpConstants.HTTP_STATUS_FORBIDDEN,
     errorCodeCount++,
   );
   public static readonly INVALID_BODY_FORMAT = new CineError(
