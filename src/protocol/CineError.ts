@@ -37,5 +37,10 @@ export default class CineError {
     HttpConstants.HTTP_STATUS_UNAUTHORIZED,
     errorCodeCount++,
   );
+  public static readonly INTERNAL_ERROR = new CineError(
+    "Something went wrong",
+    HttpConstants.HTTP_STATUS_INTERNAL_SERVER_ERROR,
+    errorCodeCount++,
+  );
   constructor(public errorMessage: string, public httpStatusCode: number, public errorCode: number) {}
 }
